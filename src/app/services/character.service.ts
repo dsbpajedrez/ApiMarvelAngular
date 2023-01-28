@@ -10,8 +10,8 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCharacters(){
-    return this.http.get<Character>(environment.baseUrlAPI)
+  getAllCharacters(offset:string){
+    return this.http.get<Character>(environment.baseUrlAPI+"&limit="+offset)
         .pipe(
           retry(2),
           tap(response => response.data.results),

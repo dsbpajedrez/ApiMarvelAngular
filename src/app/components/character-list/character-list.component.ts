@@ -9,13 +9,10 @@ import { CharacterService } from '../../services/character.service';
 })
 export class CharacterListComponent implements OnInit{
   @Input() characters: CharacterDTO[] = []
-constructor(
-  private characterService: CharacterService,
-){
-
-}
+constructor(private characterService: CharacterService){}
+ mostrarMas:number =21;
   ngOnInit(): void {
-    this.characterService.getAllCharacters()
+    this.characterService.getAllCharacters(this.mostrarMas.toString())
       .subscribe({
         next: data => {
           this.characters = data;
@@ -24,5 +21,17 @@ constructor(
         
       })
   }
+
+  masContenido = () =>{
+    this.mostrarMas+=3;
+    this.characterService.getAllCharacters(this.mostrarMas.toString())
+      .subscribe({
+        next:data => {
+          this.characters=[]
+          return this.characters = this.characters.concat(data)
+        }
+      }
+        )
+    }
 
 }
