@@ -7,5 +7,5 @@ import { CharacterDTO } from 'src/app/models/character.models';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent {
-  @Input() character!: CharacterDTO
+  @Input() character!: CharacterDTO;
 }

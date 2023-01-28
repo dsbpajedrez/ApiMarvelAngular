@@ -1,6 +1,6 @@
-<div>
+<div class="container">
     <div>
         <p>{{character.name}}</p>
-        <img src="{{character.thumbnail?.path}}.{{character.thumbnail?.extension}}" alt="">
+       <app-image [image]="character"></app-image>
     </div>
 </div>
