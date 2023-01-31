@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterDTO } from 'src/app/models/character.models';
+import { AuthService } from 'src/app/services/auth.service';
 import { CharacterService } from '../../services/character.service';
 
 @Component({
@@ -9,7 +11,13 @@ import { CharacterService } from '../../services/character.service';
 })
 export class CharacterListComponent implements OnInit{
   @Input() characters: CharacterDTO[] = []
-constructor(private characterService: CharacterService){}
+constructor(
+  private characterService: CharacterService,
+  private auth : AuthService,
+  private route : Router
+  ){
+    
+  }
  mostrarMas:number =21;
   ngOnInit(): void {
     this.characterService.getAllCharacters(this.mostrarMas.toString())
@@ -32,6 +40,18 @@ constructor(private characterService: CharacterService){}
         }
       }
         )
+    }
+   logOut() {
+      console.log('logout');
+      
+        return this.auth.logOut()
+            .then(response =>{
+              console.log(response);
+              return this.route.navigate(['login']);
+            })
+            .catch(error => console.log(error)
+            )
+   
     }
 
 }

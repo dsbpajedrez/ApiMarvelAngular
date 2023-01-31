@@ -1,0 +1,11 @@
+<form action="" [formGroup]="formReg" (ngSubmit)="login()">
+    <div>
+        <label for="">Ingrese email</label>
+        <input type="email" formControlName="email">
+    </div>
+    <div>
+        <label for="">Ingrese constraseña</label>
+        <input type="password" formControlName="password">
+    </div>
+    <button>Login</button>
+</form>
