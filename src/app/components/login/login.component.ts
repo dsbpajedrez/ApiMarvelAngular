@@ -31,4 +31,14 @@ export class LoginComponent {
 
       
   }
+
+  logInWithGoogle() {
+    return this.auth.logInWithGoogle()
+        .then(response => {
+          console.log(response);
+          this.router.navigate(['/main'])          
+        })
+        .catch(error => console.log(error)
+        )
+  }
 }
