@@ -1,12 +1,18 @@
-<form action="" [formGroup]="formReg" (ngSubmit)="login()">
-    <div>
-        <label for="">Ingrese email</label>
-        <input type="email" formControlName="email">
+<form class="form-login" action="" [formGroup]="formReg" (ngSubmit)="login()">
+    <div class="main-container">
+        <div class="input-container">
+            <label for="">Ingrese email</label>
+            <input type="email" formControlName="email">
+        </div>
+        <div class="input-container">
+            <label for="">Ingrese constraseña</label>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="button-container">
+            <button class="btn btn-info btn-init">Login</button>
+            <button class="btn btn-info btn-init" (click)="logInWithGoogle()">Login with Google</button>
+        </div>
+
     </div>
-    <div>
-        <label for="">Ingrese constraseña</label>
-        <input type="password" formControlName="password">
-    </div>
-    <button>Login</button>
 </form>
-<button class="btn btn-info" (click)="logInWithGoogle()">Login with Google</button>
+

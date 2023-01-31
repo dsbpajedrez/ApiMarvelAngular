@@ -1,0 +1,33 @@
+.form-login {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
+   justify-content: center;
+   align-items: center;
+   gap:20px;
+}
+.main-container{
+    width: 400px;
+    height: 300px;
+    padding:20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.input-container{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.button-container {
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+.btn-init{
+    margin:10px;
+}

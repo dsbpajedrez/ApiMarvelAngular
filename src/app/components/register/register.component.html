@@ -1,4 +1,4 @@
-<form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+<form class="container-fluid register-container"  [formGroup]="formReg" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label class="form-label">Email</label>
         <input type="text" class="form-control" formControlName="email">
@@ -7,5 +7,5 @@
         <label class="form-label">Password</label>
         <input type="password" class="form-control" formControlName="password">
     </div>
-    <input type="submit" value="Enviar">
+    <input class="btn btn-info" type="submit" value="Enviar">
 </form>
